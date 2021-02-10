@@ -39,7 +39,23 @@ public class ManagerTest {
     }
 
     @Test
+    public void cantRaiseSalaryByNegativeValue(){
+        manager.raiseSalary(-600.00);
+        assertEquals(100000.00, manager.getSalary(), 0.01);
+    }
+
+    @Test
     public void canGetBonus() {
         assertEquals(1000.00, manager.payBonus(),0.01);
+    }
+    @Test
+    public void canChangeName(){
+        manager.setName("Keith");
+        assertEquals("Keith", manager.getName());
+    }
+    @Test
+    public void cantAssignNull(){
+        manager.setName(null);
+        assertEquals("Sandy", manager.getName());
     }
 }
